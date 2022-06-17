@@ -51,21 +51,6 @@ nav li {
     padding-right: 2em;
 }
 
-@media screen and (max-width: 1000px) {
-    .instructions-container {
-        width: 50vw;
-        height: 50vh;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .instructions-container {
-        width: 70vw;
-        height: 70vh;
-        font-size: .8em;
-    }
-}
-
 #instructions-exit {
     text-decoration: none;
     color: #2E282A;  
@@ -103,6 +88,31 @@ nav li {
     gap: 1em;
     padding-left: 2em;
     padding-right: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+    .instructions-container {
+        width: 50vw;
+        height: 50vh;
+    }
+
+    .settings-container {
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .instructions-container {
+        width: 70vw;
+        height: 70vh;
+        font-size: .8em;
+    }
+
+    .settings-container {
+        width: 50vw;
+        height: 50vh;
+    }
 }
 
 .supers {
