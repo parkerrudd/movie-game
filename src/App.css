@@ -342,6 +342,10 @@ td {
     animation: modalFadeIn .7s ease-in;
 }
 
+.win-page h3 {
+    font-weight: bold;
+}
+
 @keyframes modalFadeIn {
     to {
         opacity: 1;

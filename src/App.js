@@ -18,14 +18,16 @@ function App() {
 
 
   //GENERATE STARTING POINT
-  // const [startingMovie, setStartingMovie] = useState(firstMovie)
-  // const superHeroMovies = JSON.parse(SuperHeroMovies); 
-  const firstMovie = ['Iron Man', 'Avatar', 'Titanic', 'Shawshank Redemption', 'Reservoir Dogs', 'Groundhog Day', 'Paddington 2', 'Amelie', 'Brokeback Mountain', 'Donnie Darko', 'Scott Pilgrim Vs. The World', 'Portrait Of A Lady On Fire', 'Léon', 'Logan', 'The Terminator', 'No Country For Old Men', 'Titanic', 'The Exorcist', 'Black Panther', 'Shaun Of The Dead' ]
+  const [startingMovie, setStartingMovie] = useState('')
+  let firstMovie = ['Iron Man', 'Avatar', 'Titanic', 'Shawshank Redemption', 'Reservoir Dogs', 'Groundhog Day', 'Paddington 2', 'Amelie', 'Brokeback Mountain', 'Donnie Darko', 'Scott Pilgrim Vs. The World', 'Portrait Of A Lady On Fire', 'Léon', 'Logan', 'The Terminator', 'No Country For Old Men', 'Titanic', 'The Exorcist', 'Black Panther', 'Shaun Of The Dead' ]
   let day = 0; 
   var today = new Date();
   var clock = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   const [time, setTime] = useState(""); 
 
+  if (startingMovie === 'superHeroMovies') {
+    firstMovie = SuperHeroMovies.movies
+  }
 
 //CLOCK 
   // useEffect(() => {
@@ -45,6 +47,7 @@ function App() {
   // }, [clock]);
 
   useEffect(() => {
+    console.log(startingMovie)
     day = (Math.floor(Math.random() * firstMovie.length))
     var axios = require('axios');
     var config = {
@@ -62,7 +65,7 @@ function App() {
     .catch(function (error) {
       console.log(error);
     });
-  }, []); 
+  }, [startingMovie]); 
 
     const [movie, setMovie] = useState(''); 
     const [guessMovieID, setGuessMovieID] = useState(''); 
@@ -196,7 +199,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar  />
+      <Navbar updateStartingMovie={startingMovie => setStartingMovie(startingMovie)} />
       <div className="guess-section">  
         <h1 id="the">The</h1>
         <Letters/>

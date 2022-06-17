@@ -42,7 +42,7 @@ export default function Navbar(props) {
                     <h1>Settings</h1>
                     <div className="supers">
                         <h3>Super Hero Movies Only</h3>
-                        <a id="toggle-off" className="toggle-super" href="#" onClick={() => setSuperToggle(!superToggle)}>
+                        <a id="toggle-off" className="toggle-super" href="#" onClick={() => {setSuperToggle(!superToggle); props.updateStartingMovie('superHeroMovies')}}>
                             { superToggle ? <FaToggleOn /> : <FaToggleOff /> }
                         </a>
                     </div>
