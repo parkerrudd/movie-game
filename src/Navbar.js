@@ -11,6 +11,8 @@ export default function Navbar(props) {
     const [questionMark, setQuestionMark] = useState(false)
     const [settings, setSettings] = useState(false)
     const [superToggle, setSuperToggle] = useState(false)
+    const [scifiToggle, setScifiToggle] = useState(false)
+    const [bestPicture, setBestPicture] = useState(false)
 
 
     return (
@@ -44,6 +46,18 @@ export default function Navbar(props) {
                         <h3>Super Hero Movies Only</h3>
                         <a id="toggle-off" className="toggle-super" href="#" onClick={() => {setSuperToggle(!superToggle); props.updateStartingMovie('superHeroMovies')}}>
                             { superToggle ? <FaToggleOn /> : <FaToggleOff /> }
+                        </a>
+                    </div>
+                    <div className="scifi-container">
+                        <h3>SciFi Movies Only</h3>
+                        <a id="scifi-toggle" className="scifi" href="#" onClick={() => {setScifiToggle(!scifiToggle); props.updateStartingMovie('scifiMovies')}}>
+                            { scifiToggle ? <FaToggleOn /> : <FaToggleOff /> }
+                        </a>
+                    </div>
+                    <div className="best-pic-container">
+                        <h3>Best Pictures (Oscars) Only</h3>
+                        <a id="best-pic-toggle" className="best-pic" href="#" onClick={() => {setBestPicture(!bestPicture); props.updateStartingMovie('bestPicture')}}>
+                            { bestPicture ? <FaToggleOn /> : <FaToggleOff /> }
                         </a>
                     </div>
                 </div>

@@ -6,6 +6,8 @@ import GuessTable from "./GuessTable";
 import WinPage from "./WinPage";
 import Navbar from "./Navbar";
 import SuperHeroMovies from './SuperHeroMovies.json'; 
+import SciFi from './SciFi.json'; 
+import BestPicture from './BestPictures.json'; 
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
 
   //GENERATE STARTING POINT
   const [startingMovie, setStartingMovie] = useState('')
-  let firstMovie = ['Iron Man', 'Avatar', 'Titanic', 'Shawshank Redemption', 'Reservoir Dogs', 'Groundhog Day', 'Paddington 2', 'Amelie', 'Brokeback Mountain', 'Donnie Darko', 'Scott Pilgrim Vs. The World', 'Portrait Of A Lady On Fire', 'Léon', 'Logan', 'The Terminator', 'No Country For Old Men', 'Titanic', 'The Exorcist', 'Black Panther', 'Shaun Of The Dead' ]
+  let firstMovie = ['Iron Man', 'Avatar', 'Titanic', 'Shawshank Redemption', 'Reservoir Dogs', 'Groundhog Day', 'Paddington 2', 'Amelie', 'Brokeback Mountain', 'Donnie Darko', 'Scott Pilgrim Vs. The World', 'Portrait Of A Lady On Fire', 'Léon', 'Logan', 'The Terminator', 'No Country For Old Men', 'The Exorcist', 'Black Panther', 'Shaun Of The Dead' ]
   let day = 0; 
   var today = new Date();
   var clock = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -27,6 +29,12 @@ function App() {
 
   if (startingMovie === 'superHeroMovies') {
     firstMovie = SuperHeroMovies.movies
+  }
+  if (startingMovie === 'scifiMovies') {
+    firstMovie = SciFi.movies
+  }
+  if (startingMovie === 'bestPicture') {
+    firstMovie = BestPicture.movies
   }
 
 //CLOCK 
